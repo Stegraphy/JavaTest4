@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hand.exam.mapper.CustomerMapper">
+
+
+    <resultMap id="BaseResultMap" type="com.hand.exam.entity.Customer">
+        <id column="customer_id" jdbcType="SMALLINT" property="customerId" />
+        <result column="store_id" jdbcType="TINYINT" property="storeId" />
+        <result column="first_name" jdbcType="VARCHAR" property="firstName" />
+        <result column="last_name" jdbcType="VARCHAR" property="lastName" />
+        <result column="email" jdbcType="VARCHAR" property="email" />
+        <result column="address_id" jdbcType="SMALLINT" property="addressId" />
+        <result column="active" jdbcType="BIT" property="active" />
+        <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+        <result column="last_update" jdbcType="TIMESTAMP" property="lastUpdate" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+    customer_id, store_id, first_name, last_name, email, address_id, active, create_date,
+    last_update
+  </sql>
+
+    <select id="findByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from customer
+        where  first_name = #{FirstName}
+    </select>
+
+</mapper>
