@@ -16,4 +16,4 @@ echo "================>update customer"
 curl -H "Content-Type:application/json" -X POST --data '{"first_name": "leoupdate","last_name":"li","email":"test@qq.com","address":"47 MySakila Drive"}' http://$JAVA_IP:9095/customer/600
 
 echo "============> delete customer"
-curl -X DELETE --cookie "id=600" http://$JAVA_IP:8080/customer/600
+curl -X DELETE --cookie "id=600" http://$JAVA_IP:9095/customer/600
