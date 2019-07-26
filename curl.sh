@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-#JAVA_IP=localhost
 JAVA_IP=192.168.174.129
 
 echo "=========>login"
