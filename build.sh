@@ -5,4 +5,4 @@ cd Exam/
 mvn clean;
 mvn package;
 cd ..
-cp Exam1/target/JavaTest5.jar  docker/java/app.jar
+cp Exam/target/JavaTest5.jar  docker/java/app.jar
