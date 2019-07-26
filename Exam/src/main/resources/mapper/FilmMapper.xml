@@ -16,11 +16,16 @@
         <result column="last_update" jdbcType="TIMESTAMP" property="lastUpdate" />
     </resultMap>
 
+    <sql id="Base_Column_List">
+        film_id,title,release_year,language_id,original_lunguage_id,rental_durarion,rental_rate,length,
+        replacement_cost,rating,special_features,last_update
+    </sql>
 
     <!--  查询所有customer信息，通过map分页实现  -->
     <select id="getFilm" parameterType="HashMap" resultMap="BaseResultMap">
         select
-        from customer
+        <include refid="Base_Column_List"/>
+        from film
         LIMIT #{startIndex},#{pageSize}
     </select>
 

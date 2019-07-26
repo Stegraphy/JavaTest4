@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 
 @RestController
@@ -26,6 +27,19 @@ public class FilmController {
         }
         return films;
 
+    }
+
+    @GetMapping(value = "/list1")
+    public List<Film> getAllFilm(int currentPage,int pageSize){
+        HashMap<String,Object> map = new HashMap<>();
+        map.put("startIndex",(currentPage-1)*pageSize);
+        map.put("pageSize",pageSize);
+        logger.info(">>>>>>>>>>>>>>Implement with Original method to paging");
+        List<Film> films = filmService.getFilm(map);
+        for (int i =0 ;i<films.size();i++){
+            logger.info(films.get(i).toString());
+        }
+        return films;
     }
 
     @PutMapping(value = "/add")

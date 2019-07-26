@@ -8,6 +8,7 @@ import com.hand.exam.service.FilmService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -27,5 +28,10 @@ public class FilmServiceImpl implements FilmService {
         PageHelper.startPage(page.getPage(),page.getPageSize());
         PageHelper.orderBy("film_id");
         return filmMapper.selectAll();
+    }
+
+    @Override
+    public List<Film> getFilm(HashMap<String, Object> map) {
+        return filmMapper.getFilm(map);
     }
 }
