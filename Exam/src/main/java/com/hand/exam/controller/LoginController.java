@@ -19,7 +19,7 @@ public class LoginController {
 
     @PostMapping("/login")
     public String login(@RequestBody LoginE loginE){
-        logger.info("login………………");
+        logger.info(">>>>>>>>>>>login………………<<<<<<<<<<<<<<<");
         String responseText = "login false";
         Customer customer = customerService.findByName(loginE.getLast_name(),loginE.getPassword());
         if (customer != null) {

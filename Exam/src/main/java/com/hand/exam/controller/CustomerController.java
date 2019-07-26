@@ -28,7 +28,7 @@ public class CustomerController {
 
     @PutMapping("/customer")
     public int create(@RequestBody CustomerEVO customerEVO, HttpServletResponse response) {
-        logger.info("insert customer ");
+        logger.info(">>>>>>>>>>>>>>>insert customer<<<<<<<<<<<<<<<<<<<<<< ");
         Address address = addressService.findByAddress(customerEVO.getAddress());
         Customer customer = new Customer();
         customer.setFirstName(customerEVO.getFirst_name());
@@ -49,7 +49,7 @@ public class CustomerController {
     @PostMapping("/customer/{id}")
     public int update(@RequestBody CustomerEVO customerEVO, @PathVariable("id") Short id) {
         Short customerId = id;
-        logger.info("update customer with customerId is "+customerId);
+        logger.info(">>>>>>>>>>>>>>>>update customer with customerId is "+customerId);
         Address address = addressService.findByAddress(customerEVO.getAddress());
         Customer customer = new Customer();
         customer.setCustomerId((short) 600);
@@ -70,7 +70,7 @@ public class CustomerController {
         Short cId = Short.parseShort(cookie.getValue());
         System.out.println(cId);
         Short customerId = cId;
-        logger.info("Delete customer with customerId is "+customerId);
+        logger.info(">>>>>>>>>>>>>>>>>>>>Delete customer with customerId is "+customerId);
        Customer customer = new Customer();
        customer.setCustomerId(customerId);
         return customerService.delete(customer);
