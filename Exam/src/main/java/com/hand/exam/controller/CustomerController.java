@@ -26,7 +26,7 @@ public class CustomerController {
     @Autowired
     private AddressService addressService;
 
-    @PutMapping("/customer")
+    @PostMapping("/customer")
     public int create(@RequestBody CustomerEVO customerEVO, HttpServletResponse response) {
         logger.info(">>>>>>>>>>>>>>>insert customer<<<<<<<<<<<<<<<<<<<<<< ");
         Address address = addressService.findByAddress(customerEVO.getAddress());
@@ -46,7 +46,7 @@ public class CustomerController {
         return result;
     }
 
-    @PostMapping("/customer/{id}")
+    @PutMapping("/customer/{id}")
     public int update(@RequestBody CustomerEVO customerEVO, @PathVariable("id") Short id) {
         Short customerId = id;
         logger.info(">>>>>>>>>>>>>>>>update customer with customerId is "+customerId);

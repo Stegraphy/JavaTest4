@@ -30,11 +30,13 @@ public class FilmController {
     }
 
     @GetMapping(value = "/list1")
-    public List<Film> getAllFilm(int currentPage,int pageSize){
+    public List<Film> getAllFilm(@RequestBody Page page){
+        int currentPage = page.getPage();
+        int pageSize = page.getPageSize();
         HashMap<String,Object> map = new HashMap<>();
         map.put("startIndex",(currentPage-1)*pageSize);
         map.put("pageSize",pageSize);
-        logger.info(">>>>>>>>>>>>>>Implement with Original method to paging");
+        logger.info(">>>>>>>>>>>>>>Implement with Original method to paging<<<<<<<<<<<<<<<");
         List<Film> films = filmService.getFilm(map);
         for (int i =0 ;i<films.size();i++){
             logger.info(films.get(i).toString());

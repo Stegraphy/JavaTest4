@@ -17,7 +17,7 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-        film_id,title,release_year,language_id,original_lunguage_id,rental_durarion,rental_rate,length,
+        film_id,title,release_year,language_id,original_language_id,rental_duration,rental_rate,length,
         replacement_cost,rating,special_features,last_update
     </sql>
 
