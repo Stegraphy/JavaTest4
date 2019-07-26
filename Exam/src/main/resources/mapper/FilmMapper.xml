@@ -28,5 +28,8 @@
         from film
         LIMIT #{startIndex},#{pageSize}
     </select>
+    <select id="selectFilm" resultMap="BaseResultMap" parameterType="com.hand.exam.entity.Film">
+        select * from film
+    </select>
 
 </mapper>
