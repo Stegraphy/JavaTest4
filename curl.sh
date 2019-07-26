@@ -4,6 +4,9 @@ JAVA_IP=192.168.174.129
 echo "=========>login"
 curl -H "Content-Type:application/json" -X POST --data '{"name": "MARY","password":"SMITH"}' http://$JAVA_IP:18080/login -s
 
+echo "=========> use original method to  paging"
+curl -H "Content-Type:application/json" -X GET --data '{"page": 3,"pageSize":4}' http://$JAVA_IP:18080/film/list1
+
 echo "=========> use pagehelper select"
 curl -H "Content-Type:application/json" -X GET --data '{"page": 3,"pageSize":4}' http://$JAVA_IP:18080/film/list
 
