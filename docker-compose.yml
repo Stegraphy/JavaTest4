@@ -19,10 +19,10 @@ services:
     links:
       - mysql-1
     environment:
-          - MYSQL_IP=192.168.174.128
+          - MYSQL_IP=192.168.174.129
           - MYSQL_PORT=3306
           - MYSQL_NAME=root
           - MYSQL_PWD=root
           - MYSQL_DBNAME=sakila
-          - JAVA_IP=192.168.174.128
+          - JAVA_IP=192.168.174.129
 
