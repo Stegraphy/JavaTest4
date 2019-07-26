@@ -6,7 +6,7 @@ echo "=========>login"
 curl -H "Content-Type:application/json" -X POST --data '{"name": "MARY","password":"SMITH"}' http://$JAVA_IP:9095/login -s
 
 echo "=========> use pagehelper select"
-curl -H "Content-Type:application/json" -X GET --data '{"page": 3,"pageSize":4}' http://$JAVA_IP:9095/film
+curl -H "Content-Type:application/json" -X GET --data '{"page": 3,"pageSize":4}' http://$JAVA_IP:9095/film/list
 
 echo "===============> insert customer"
 #first_name, last_name, email, address
