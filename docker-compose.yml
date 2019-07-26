@@ -13,7 +13,7 @@ services:
     build: ./docker/java
     image: javatest/java:1.0
     ports:
-      - "9095:18080"
+      - "18080:18080"
     depends_on:
       - mysql-1
     links:
